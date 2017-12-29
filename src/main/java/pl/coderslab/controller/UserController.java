@@ -10,7 +10,7 @@ import pl.coderslab.repository.TweetRepository;
 import pl.coderslab.repository.UserRepository;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserController {
 	private UserRepository userRep;
 	private TweetRepository tweetRep;

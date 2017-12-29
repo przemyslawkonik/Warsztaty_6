@@ -5,7 +5,7 @@
  <c:forEach var="t" items="${tweets}">
   <p>
    Created by 
-   <a href="${pageContext.request.contextPath}/user/${t.user.id}">${t.user.username}</a> 
+   <a href="${pageContext.request.contextPath}/users/${t.user.id}">${t.user.username}</a> 
    on ${t.created}:
   </p>
   <p>${t.text}</p><hr>
