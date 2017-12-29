@@ -1,0 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<c:forEach var="t" items="${tweets}">
+ <p>
+  Created by 
+  <a href="${pageContext.request.contextPath}/users/${t.user.id}">${t.user.username}</a> 
+  on ${t.created}:
+ </p>
+ <p>${t.text}</p><hr>
+</c:forEach>
