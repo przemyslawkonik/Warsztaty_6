@@ -42,6 +42,9 @@ public class User {
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
 	private Set<Comment> comments;
 
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "sender")
+	private Set<Message> messages;
+
 	public User() {
 	}
 
@@ -103,6 +106,14 @@ public class User {
 
 	public void setComments(Set<Comment> comments) {
 		this.comments = comments;
+	}
+
+	public Set<Message> getMessages() {
+		return messages;
+	}
+
+	public void setMessages(Set<Message> messages) {
+		this.messages = messages;
 	}
 
 }
