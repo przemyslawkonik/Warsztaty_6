@@ -11,7 +11,7 @@
 <body>
  <%@ include file="jspf/header.jspf" %>
  <%@ include file="jspf/main_menu.jspf" %>
- <p>User: ${user.username}</p> 
+ <a href="${pageContext.request.contextPath}/messages/${user.id}">Messages</a> 
  <%@ include file="jspf/tweet_list.jspf" %> 
  <%@ include file="jspf/footer.jspf" %>
 </body>
