@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -35,6 +36,7 @@ public class Tweet {
 	private LocalDateTime created;
 
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "tweet")
+	@OrderBy("id")
 	private Set<Comment> comments;
 
 	public Tweet() {
