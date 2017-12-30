@@ -9,7 +9,7 @@ import pl.coderslab.entity.Tweet;
 
 public interface CommentRepository extends JpaRepository<Comment, Long> {
 
-	public List<Comment> findAllByTweetByOrderByCreated(Tweet tweet);
+	public List<Comment> findByTweet(Tweet tweet);
 
-	public List<Comment> findAllByTweetIdByOrderByCreated(long id);
+	public List<Comment> findByTweetId(long id);
 }

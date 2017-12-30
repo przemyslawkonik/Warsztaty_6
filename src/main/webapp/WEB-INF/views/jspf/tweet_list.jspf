@@ -9,4 +9,8 @@
   on ${t.created}:
  </p>
  <p>${t.text}</p><hr>
+ <div align="center">
+  <%@ include file="comment_list.jspf" %>
+  <%@ include file="add_comment.jspf" %>
+ </div><hr><hr><hr>
 </c:forEach>
