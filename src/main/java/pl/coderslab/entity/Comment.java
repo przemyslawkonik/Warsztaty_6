@@ -1,7 +1,6 @@
 package pl.coderslab.entity;
 
 import java.time.LocalDateTime;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -10,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -18,8 +16,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name = "tweet")
-public class Tweet {
+@Table(name = "comment")
+public class Comment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -27,17 +25,17 @@ public class Tweet {
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	private User user;
 
-	@NotEmpty
-	@Size(max = 140)
-	private String text;
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+	private Tweet tweet;
 
 	@CreationTimestamp
 	private LocalDateTime created;
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "tweet")
-	private Set<Comment> comments;
+	@NotEmpty
+	@Size(max = 60)
+	private String text;
 
-	public Tweet() {
+	public Comment() {
 	}
 
 	public long getId() {
@@ -56,12 +54,12 @@ public class Tweet {
 		this.user = user;
 	}
 
-	public String getText() {
-		return text;
+	public Tweet getTweet() {
+		return tweet;
 	}
 
-	public void setText(String text) {
-		this.text = text;
+	public void setTweet(Tweet tweet) {
+		this.tweet = tweet;
 	}
 
 	public LocalDateTime getCreated() {
@@ -72,12 +70,12 @@ public class Tweet {
 		this.created = created;
 	}
 
-	public Set<Comment> getComments() {
-		return comments;
+	public String getText() {
+		return text;
 	}
 
-	public void setComments(Set<Comment> comments) {
-		this.comments = comments;
+	public void setText(String text) {
+		this.text = text;
 	}
 
 }

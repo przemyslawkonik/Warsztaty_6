@@ -1,6 +1,6 @@
 package pl.coderslab.entity;
 
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -37,7 +37,10 @@ public class User {
 	private String email;
 
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
-	private List<Tweet> tweets;
+	private Set<Tweet> tweets;
+
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+	private Set<Comment> comments;
 
 	public User() {
 	}
@@ -86,12 +89,20 @@ public class User {
 		this.email = email;
 	}
 
-	public List<Tweet> getTweets() {
+	public Set<Tweet> getTweets() {
 		return tweets;
 	}
 
-	public void setTweets(List<Tweet> tweets) {
+	public void setTweets(Set<Tweet> tweets) {
 		this.tweets = tweets;
+	}
+
+	public Set<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(Set<Comment> comments) {
+		this.comments = comments;
 	}
 
 }
