@@ -12,7 +12,7 @@
  <%@ include file="jspf/header.jspf" %>
  <%@ include file="jspf/main_menu.jspf" %>
  <%@ include file="jspf/add_tweet.jspf" %>
- <%@ include file="jspf/tweet_list.jspf" %>
+ <%@ include file="jspf/home_tweets.jspf" %>
  <%@ include file="jspf/footer.jspf" %>
 </body>
 </html>
