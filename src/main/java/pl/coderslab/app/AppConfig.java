@@ -24,6 +24,8 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+import pl.coderslab.converter.TweetConverter;
+
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
@@ -47,6 +49,11 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	@Bean
 	public Validator validator() {
 		return new LocalValidatorFactoryBean();
+	}
+
+	@Bean
+	public TweetConverter tweetConverter() {
+		return new TweetConverter();
 	}
 
 	@Bean
@@ -78,6 +85,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void addFormatters(FormatterRegistry registry) {
+		registry.addConverter(tweetConverter());
 	}
 
 }
