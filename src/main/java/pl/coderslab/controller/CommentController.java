@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import pl.coderslab.bean.SessionManager;
 import pl.coderslab.entity.Comment;
-import pl.coderslab.entity.User;
 import pl.coderslab.repository.CommentRepository;
 
 @Controller
@@ -25,12 +23,11 @@ public class CommentController {
 	}
 
 	@PostMapping("/add")
-	public String add(@Valid @ModelAttribute Comment c, BindingResult br) {
+	public String add(@Valid @ModelAttribute Comment comment, BindingResult br) {
 		if (br.hasErrors()) {
 			return "home";
 		}
-		c.setUser((User) SessionManager.session().getAttribute("user"));
-		commentRep.save(c);
+		commentRep.save(comment);
 		return "redirect:/";
 	}
 }

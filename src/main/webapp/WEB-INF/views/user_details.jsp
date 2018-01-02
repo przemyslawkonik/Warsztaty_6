@@ -23,7 +23,7 @@
    </c:choose>
   </c:if>
  </p> 
- <%@ include file="jspf/tweet_list.jspf" %> 
+<%--  <%@ include file="jspf/tweet_list.jspf" %>  --%>
  <%@ include file="jspf/fragment/footer.jspf" %>
 </body>
 </html>
