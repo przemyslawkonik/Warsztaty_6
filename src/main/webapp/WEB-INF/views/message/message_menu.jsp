@@ -8,10 +8,13 @@
 <title>Warsztaty 6</title>
 </head>
 <body>
- <%@ include file="jspf/fragment/header.jspf" %>
- <%@ include file="jspf/fragment/main_menu.jspf" %>
+ <%@ include file="../jspf/fragment/header.jspf" %>
+ <%@ include file="../jspf/fragment/main_menu.jspf" %>
+ <%@ include file="../jspf/fragment/profile_header.jspf" %>
+ <a href="${pageContext.request.contextPath}/messages/${id}">All</a>
  <a href="${pageContext.request.contextPath}/messages/received/${id}">Received</a>
- <a href="${pageContext.request.contextPath}/messages/sended/${id}">Send</a>
- <%@ include file="jspf/fragment/footer.jspf" %>
+ <a href="${pageContext.request.contextPath}/messages/sended/${id}">Sended</a>
+ <%@ include file="../jspf/message/message_list.jspf" %>
+ <%@ include file="../jspf/fragment/footer.jspf" %>
 </body>
 </html>

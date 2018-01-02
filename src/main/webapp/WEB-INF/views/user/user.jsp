@@ -11,7 +11,7 @@
 <body>
  <%@ include file="../jspf/fragment/header.jspf" %>
  <%@ include file="../jspf/fragment/main_menu.jspf" %>
- <p>User profile: ${user.username}</p>
+ <%@ include file="../jspf/fragment/profile_header.jspf" %>
  <p>
   <c:if test="${sessionScope.user!=null}">
    <c:choose>
