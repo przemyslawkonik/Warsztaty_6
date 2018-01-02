@@ -25,6 +25,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 import pl.coderslab.converter.TweetConverter;
+import pl.coderslab.converter.UserConverter;
 
 @Configuration
 @EnableWebMvc
@@ -57,6 +58,11 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	}
 
 	@Bean
+	public UserConverter userConverter() {
+		return new UserConverter();
+	}
+
+	@Bean
 	public ViewResolver viewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 		viewResolver.setViewClass(JstlView.class);
@@ -86,6 +92,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	@Override
 	public void addFormatters(FormatterRegistry registry) {
 		registry.addConverter(tweetConverter());
+		registry.addConverter(userConverter());
 	}
 
 }
