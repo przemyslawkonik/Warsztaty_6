@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import pl.coderslab.bean.SessionManager;
 import pl.coderslab.entity.Tweet;
-import pl.coderslab.entity.User;
 import pl.coderslab.repository.TweetRepository;
 
 @Controller
@@ -25,12 +23,11 @@ public class TweetController {
 	}
 
 	@PostMapping("/add")
-	public String add(@Valid @ModelAttribute Tweet t, BindingResult br) {
+	public String add(@Valid @ModelAttribute Tweet tweet, BindingResult br) {
 		if (br.hasErrors()) {
 			return "home";
 		}
-		t.setUser((User) SessionManager.session().getAttribute("user"));
-		tweetRep.save(t);
+		tweetRep.save(tweet);
 		return "redirect:/";
 	}
 }

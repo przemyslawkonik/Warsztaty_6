@@ -10,7 +10,7 @@
 <body>
  <%@ include file="jspf/fragment/header.jspf" %>
  <%@ include file="jspf/fragment/main_menu.jspf" %>
- <%@ include file="jspf/add_tweet.jspf" %>
+ <%@ include file="jspf/tweet/add_tweet.jspf" %>
  <%@ include file="jspf/home_tweets.jspf" %>
  <%@ include file="jspf/fragment/footer.jspf" %>
 </body>
