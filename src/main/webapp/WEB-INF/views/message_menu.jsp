@@ -12,7 +12,7 @@
  <%@ include file="jspf/header.jspf" %>
  <%@ include file="jspf/main_menu.jspf" %>
  <a href="${pageContext.request.contextPath}/messages/received/${id}">Received</a>
- <a href="${pageContext.request.contextPath}/messages/send/${id}">Send</a>
+ <a href="${pageContext.request.contextPath}/messages/sended/${id}">Send</a>
  <%@ include file="jspf/footer.jspf" %>
 </body>
 </html>

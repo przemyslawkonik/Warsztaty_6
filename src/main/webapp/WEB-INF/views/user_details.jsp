@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <html>
 <head>
@@ -11,7 +12,18 @@
 <body>
  <%@ include file="jspf/header.jspf" %>
  <%@ include file="jspf/main_menu.jspf" %>
- <a href="${pageContext.request.contextPath}/messages/${user.id}">Messages</a> 
+ <p>
+  <c:if test="${sessionScope.user!=null}">
+   <c:choose>
+    <c:when test="${sessionScope.user.id==user.id}">
+     <a href="${pageContext.request.contextPath}/messages/${user.id}">Messages</a>
+    </c:when>
+    <c:otherwise>
+     <a href="${pageContext.request.contextPath}/messages/send/${user.id}">Send message</a>
+    </c:otherwise>
+   </c:choose>
+  </c:if>
+ </p> 
  <%@ include file="jspf/tweet_list.jspf" %> 
  <%@ include file="jspf/footer.jspf" %>
 </body>
