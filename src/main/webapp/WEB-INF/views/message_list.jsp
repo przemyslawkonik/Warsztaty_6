@@ -6,12 +6,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<%@ include file="jspf/head_config.jspf" %>
 <title>Warsztaty 6</title>
 </head>
 <body>
- <%@ include file="jspf/header.jspf" %>
- <%@ include file="jspf/main_menu.jspf" %>
+ <%@ include file="jspf/fragment/header.jspf" %>
+ <%@ include file="jspf/fragment/main_menu.jspf" %>
  <c:forEach var="m" items="${messages}">
   <p>
   From  
@@ -22,6 +21,6 @@
  </p>
  <p>${m.text}</p><hr>
  </c:forEach>
- <%@ include file="jspf/footer.jspf" %>
+ <%@ include file="jspf/fragment/footer.jspf" %>
 </body>
 </html>

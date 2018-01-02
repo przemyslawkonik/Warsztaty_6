@@ -6,18 +6,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<%@ include file="jspf/head_config.jspf" %>
 <title>Warsztaty 6</title>
 </head>
 <body>
- <%@ include file="jspf/header.jspf" %>
- <%@ include file="jspf/main_menu.jspf" %>
+ <%@ include file="jspf/fragment/header.jspf" %>
+ <%@ include file="jspf/fragment/main_menu.jspf" %>
  <form:form method="post" modelAttribute="user">
   <p><form:input path="username" placeholder="username"/><form:errors path="username"/></p>
   <p><form:input path="email" placeholder="email"/><form:errors path="email"/></p>
   <p><form:input path="password" type="password" placeholder="password"/><form:errors path="password"/></p>
   <p><input type="submit"/></p>
  </form:form>
- <%@ include file="jspf/footer.jspf" %>
+ <%@ include file="jspf/fragment/footer.jspf" %>
 </body>
 </html>
