@@ -1,4 +1,4 @@
-package pl.coderslab.controller;
+package pl.coderslab.controller.user;
 
 import javax.validation.Valid;
 
@@ -28,13 +28,13 @@ public class RegisterController {
 	@GetMapping("")
 	public String register(Model m) {
 		m.addAttribute("user", new User());
-		return "register";
+		return "user/register";
 	}
 
 	@PostMapping("")
 	public String register(@Valid @ModelAttribute User u, BindingResult br) {
 		if (br.hasErrors()) {
-			return "register";
+			return "user/register";
 		}
 		userRep.save(u);
 		SessionManager.session().setAttribute("user", u);

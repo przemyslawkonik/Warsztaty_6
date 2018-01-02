@@ -1,4 +1,4 @@
-package pl.coderslab.controller;
+package pl.coderslab.controller.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,7 +26,7 @@ public class LoginController {
 	@GetMapping("")
 	public String login(Model m) {
 		m.addAttribute("loginData", new LoginData());
-		return "login";
+		return "user/login";
 	}
 
 	@PostMapping("")
@@ -37,7 +37,7 @@ public class LoginController {
 			return "redirect:/";
 		}
 		m.addAttribute("errorMsg", "Incorrect data");
-		return "login";
+		return "user/login";
 	}
 
 }

@@ -1,4 +1,4 @@
-package pl.coderslab.controller;
+package pl.coderslab.controller.user;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,7 +24,7 @@ public class UserController {
 	public String userDetails(@PathVariable long id, Model m) {
 		m.addAttribute("user", userRep.findOne(id));
 		m.addAttribute("tweets", tweetRep.findByUserId(id));
-		return "user_details";
+		return "user/user";
 	}
 
 }

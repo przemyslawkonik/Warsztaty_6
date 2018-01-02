@@ -9,8 +9,9 @@
 <title>Warsztaty 6</title>
 </head>
 <body>
- <%@ include file="jspf/fragment/header.jspf" %>
- <%@ include file="jspf/fragment/main_menu.jspf" %>
+ <%@ include file="../jspf/fragment/header.jspf" %>
+ <%@ include file="../jspf/fragment/main_menu.jspf" %>
+ <p>User profile: ${user.username}</p>
  <p>
   <c:if test="${sessionScope.user!=null}">
    <c:choose>
@@ -22,8 +23,9 @@
     </c:otherwise>
    </c:choose>
   </c:if>
- </p> 
-<%--  <%@ include file="jspf/tweet_list.jspf" %>  --%>
- <%@ include file="jspf/fragment/footer.jspf" %>
+ </p>
+ <p align="center">Tweet's history</p>
+ <%@ include file="../jspf/tweet/tweet_list_with_comments.jspf" %> 
+ <%@ include file="../jspf/fragment/footer.jspf" %>
 </body>
 </html>
