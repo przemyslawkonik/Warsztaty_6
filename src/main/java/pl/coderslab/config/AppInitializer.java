@@ -1,4 +1,4 @@
-package pl.coderslab.app;
+package pl.coderslab.config;
 
 import javax.servlet.Filter;
 import javax.servlet.ServletContext;
