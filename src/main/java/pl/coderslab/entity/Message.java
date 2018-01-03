@@ -22,8 +22,6 @@ public class Message {
 
 	private String text;
 
-	private boolean received;
-
 	@CreationTimestamp
 	private LocalDateTime created;
 
@@ -50,14 +48,6 @@ public class Message {
 
 	public void setText(String text) {
 		this.text = text;
-	}
-
-	public boolean isReceived() {
-		return received;
-	}
-
-	public void setReceived(boolean received) {
-		this.received = received;
 	}
 
 	public LocalDateTime getCreated() {

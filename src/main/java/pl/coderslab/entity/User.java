@@ -29,8 +29,6 @@ public class User {
 	@NotEmpty
 	private String password;
 
-	private boolean enabled;
-
 	@NotEmpty
 	@Email
 	@Column(unique = true)
@@ -74,14 +72,6 @@ public class User {
 
 	public boolean isPasswordCorrect(String password) {
 		return BCrypt.checkpw(password, this.password);
-	}
-
-	public boolean isEnabled() {
-		return enabled;
-	}
-
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
 	}
 
 	public String getEmail() {
